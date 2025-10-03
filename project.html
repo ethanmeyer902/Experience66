@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<head>
+    <title>Experience66 Project Page</title>
+    <style>
+      /* Reuse same CSS layout from original file */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth; /* Smooth scrolling effect */
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee);
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+      .container {
+        background: #ffffffee;
+        padding: 40px 30px;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        max-width: 800px;
+        width: 100%;
+      }
+      h1 {
+        color: #444;
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+      }
+      nav {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: #444;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #0077cc;
+        transition: width 0.3s ease;
+      }
+      nav a:hover {
+        color: #0077cc;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+      h2 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #222;
+        position: relative;
+        cursor: pointer;
+      }
+      p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+      ul {
+        margin: 10px 0 20px 20px;
+        line-height: 1.6;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Experience66 Project Page</h1>
+
+    <!-- Navigation Menu -->
+    <nav>
+      <a href="#description">Project Description</a>
+      <a href="#solution">Solution</a>
+      <a href="#technologies">Technologies</a>
+    </nav>
+
+    <!-- Project Description Section -->
+    <h2 id="description">Project Description</h2>
+    <p>
+      As we approach the 100-year anniversary of Route 66, an important question arises:
+      how can we effectively showcase its history, landmarks, and everything it has to offer?
+      Our team has decided to develop a solution that enables users to experience the rich
+      history of Route 66 through a dedicated mobile application.
+    </p>
+
+    <!-- Solution Section -->
+    <h2 id="solution">Solution</h2>
+    <p>
+      To address this challenge, our team was tasked with creating a mobile application
+      that provides seamless access to the history, data, and cultural significance of Route 66.
+      The app will allow users to explore this information at their fingertips—whether
+      stationary or on the move. A key feature will be geofencing, which enhances the
+      experience by triggering location-specific content as users travel along Route 66.
+    </p>
+
+    <!-- Technologies Section -->
+    <h2 id="technologies">Technologies</h2>
+    <p>The following tools and platforms will be used to implement the project:</p>
+    <ul>
+      <li><strong>ArcGIS:</strong> Used for the map component of the app, providing location-based services and interactive mapping. This solution was recommended by our client.</li>
+      <li><strong>Java:</strong> Chosen as the primary programming language because of its compatibility with ArcGIS and suitability for mobile app development.</li>
+      <li><strong>GitHub:</strong> Our version control and collaborative code-sharing platform, enabling efficient teamwork and project management.</li>
+      <li><strong>NAU Archives:</strong> Serving as our database pool, from which we will pull historical data and resources related to Route 66.</li>
+    </ul>
+
+  </div>
+</body>
+</html>
+
