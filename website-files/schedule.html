@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Project Timeline</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+  }
+
+  .wrap {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+  p.lead {
+    color: #333;
+  }
+
+  /* timeline line */
+  .timeline {
+    position: relative;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0 0 0 40px; /* leave space for line + dots */
+    border-left: 2px solid #333; /* line on the left */
+  }
+
+  /* each month group */
+  .month {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  /* dot for each month */
+  .month::before {
+    content: "";
+    position: absolute;
+    left: -30px; /* center on the line */
+    top: 17px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+  }
+
+  /* month label */
+  .label {
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+
+  /* milestone card */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    background: #fff;
+  }
+  .card h3 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+  }
+  .card p {
+    margin: 0;
+    color: #333;
+  }
+
+  .links {
+    margin-top: 6px;
+  }
+  .links a {
+    color: #333;
+    text-decoration: underline;
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+  .card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  background: #fff;
+  display: block;
+}
+
+.card h3 {
+  margin: 0 0 5px;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 0;
+  color: #333;
+}
+
+.pdf-card {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.pdf-card:hover {
+  background: #f5f5f5;
+  border-color: #333;
+}
+
+.link-card {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  background: #fff;
+  text-decoration: none;   /* remove underline */
+  color: inherit;          /* use normal text color */
+  transition: background .2s, border-color .2s;
+}
+
+/* Hover / focus effect */
+.link-card:hover {
+  background: #f5f5f5;
+  border-color: #333;
+}
+
+/* Ensure visited links look the same */
+.link-card:visited {
+  color: inherit;
+}
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Project Timeline</h1>
+
+    <ol class="timeline">
+
+      <!-- SEPTEMBER -->
+      <li class="month">
+        <div class="label">September</div>
+        <div class="card">
+          <h3>First Client Meeting</h3>
+          <p>Met with Mike and Mark to discuss project details.</p>
+        </div>
+
+        <a href="https://docs.google.com/document/d/1rxTgINr0xwVgUEyVcgh-qj3rorWw6L0PcfdwmIWaGkU/preview"
+          target="_blank" rel="noopener"
+          class="card link-card">
+          <span class="badge">PDF</span>
+          <h3>Team Inventory (Deliverable)</h3>
+          <p>Summary of team's skills, interests and experience.</p>
+        </a>
+
+        <a href="https://docs.google.com/document/d/1u7D5AhSobo2ij1cZ3gNBsb4pGzjYu7hWMk3pz-j8HEo/preview"
+          target="_blank" rel="noopener"
+          class="card link-card">
+          <span class="badge">PDF</span>
+          <h3>Team Standards (Deliverable)</h3>
+          <p>Summary of team's expectations for conflicts, meeting times, team roles and more.</p>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1aXidE2aGsPPxEqpU9zXTkG9TE0x7zqXe/preview"
+          target="_blank" rel="noopener"
+          class="card link-card">
+          <span class="badge">PDF</span>
+          <h3>Mini Intro (Deliverable)</h3>
+          <p>Team's first presentation, introducing project concept, background and the solution that we will be working toward throughout the semester.</p>
+        </a>
+
+        <div class="card">
+          <h3>Team Website Published</h3>
+          <p>Published website outlining the project and the team.</p>
+        </div>
+
+      </li>
+
+      <!-- OCTOBER -->
+      <li class="month">
+        <div class="label">October</div>
+        <div class="card">
+          <h3>Tech Research</h3>
+          <p>The team researched and learned more about possible programs and technologies that could be used to make the project work.</p>
+        </div>
+
+        <div class="card">
+          <h3>Test and Setup Technologies</h3>
+          <p>Using the technologies we discovered and agreed on, make a simple demo showing we understand how it works on a basic level.</p>
+        </div>
+
+        <div class="card">
+          <h3>Tech Feasbility (Soon to be deliverable)</h3>
+          <p>Team document outlining technologies that will be used throughout the project and why those are being used over others.</p>
+        </div>
+
+        <div class="card">
+          <h3>Map Integration</h3>
+          <p>Using the mapping technology we found, add a map with geofencing and points of interest to the mobile app.</p>
+        </div>
+
+        <div class="card">
+          <h3>Database Integration</h3>
+          <p>Put all of the information used from the NAU Archives into the app.</p>
+        </div>
+      </li>
+
+      <!-- NOVEMBER -->
+      <li class="month">
+        <div class="label">November</div>
+        <div class="card">
+          <h3>Beta Features</h3>
+          <p>Core features completed and tested.</p>
+        </div>
+
+        <div class="card">
+          <h3>Poster Review (Soon to be deliverable)</h3>
+          <p>Create the poster that will be used during our presentation at the undergrad symposium.</p>
+        </div>
+
+        <div class="card">
+          <h3>Finalize Demo (Webpage coming soon)</h3>
+          <p>Finalize all features that will be going into the demo that are outlined in the project details.</p>
+        </div>
+
+        <div class="card">
+          <h3>Requirements Document (Soon to be deliverable)</h3>
+          <p>Description of your project's requirements, both functional and non-functional.</p>
+        </div>
+
+        <div class="card">
+          <h3>Finalize Website</h3>
+          <p>Have a complete and working website displaying all details of the project.</p>
+        </div>
+      </li>
+
+      <!-- DECEMBER -->
+      <li class="month">
+        <div class="label">December</div>
+        <div class="card">
+          <h3>Present Poster at Undergrad Symposium</h3>
+          <p>Setup and display our project to people at the syposium.</p>
+        </div>
+
+        <div class="card">
+          <h3>Market Our Project</h3>
+          <p>Give presentation on our current version of our mobile app, attempting to "sell" our product.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
