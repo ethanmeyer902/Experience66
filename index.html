@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Experience66 • Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Embedded CSS -->
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --muted: #6b7280;
+            --accent: #000000;
+            --border: #e5e7eb;
+            --surface: #f7f7f8;
+            --radius: 14px;
+            --maxw: 1100px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 1rem
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color .2s ease
+        }
+
+        a:hover,
+        a:focus {
+            color: #333;
+            text-decoration: underline
+        }
+
+        /* Header */
+        .site-header {
+            border-bottom: 1px solid var(--border);
+            background: #ffffff
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-weight: 700;
+            color: inherit;
+            text-decoration: none
+        }
+
+        .brand img {
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fff
+        }
+
+        /* Make all normal paragraphs black text */
+        p {
+            color: #111;
+
+        }
+
+        /* Titles inside the paragraph  */
+        p strong {
+            font-weight: 700;
+            /* bold */
+            color: #111;
+
+        }
+
+
+        /* Hamburger */
+        .hamburger {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 4px;
+            background: #fff;
+            border: 1px solid var(--border);
+            width: 44px;
+            height: 38px;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger-bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #000
+        }
+
+        #primaryNav {
+            position: absolute;
+            top: 64px;
+            right: 1rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .06);
+            padding: .5rem;
+            display: none;
+        }
+
+        #primaryNav.open {
+            display: block
+        }
+
+        #primaryNav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            min-width: 220px
+        }
+
+        #primaryNav li {
+            margin: 0
+        }
+
+        #primaryNav a {
+            display: block;
+            padding: .6rem .8rem;
+            border-radius: 10px;
+            color: #111;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        #primaryNav a:hover,
+        #primaryNav a:focus {
+            background: #f2f2f2;
+            color: #000
+        }
+
+        #primaryNav a.active {
+            font-weight: 700
+        }
+
+        @media (min-width: 900px) {
+            .hamburger {
+                display: none
+            }
+
+            #primaryNav {
+                position: static;
+                display: block;
+                border: none;
+                box-shadow: none;
+                padding: 0
+            }
+
+            #primaryNav ul {
+                display: flex;
+                gap: .6rem;
+                min-width: auto
+            }
+
+            #primaryNav a {
+                border: 1px solid var(--border)
+            }
+
+            #primaryNav a:hover {
+                background: #f7f7f8
+            }
+        }
+
+        /* Cards & Sections */
+        .card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            background: #fff;
+            margin: 1rem 0;
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin: 2rem 0
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: .5rem
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: #fff;
+        }
+
+
+        @media (min-width: 900px) {
+            .hero {
+                grid-template-columns: 160px 1fr
+            }
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            background: #fff;
+        }
+
+        .actions {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+            margin-top: .5rem
+        }
+
+        .cta {
+            display: inline-block;
+            padding: .7rem 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: #111;
+            text-decoration: none;
+            transition: background .2s ease, border .2s ease, color .2s ease;
+        }
+
+        .cta:hover {
+            background: #f9f9f9;
+            border-color: #d1d5db
+        }
+
+        .cta--primary {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        .cta--primary:hover {
+            background: #333;
+            transform: translateY(-1px)
+        }
+
+        /* Grids */
+        .team-grid,
+        .clients-grid,
+        .mentors-grid {
+            display: grid;
+            gap: 1rem
+        }
+
+        @media (min-width: 900px) {
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr)
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .mentors-grid {
+                grid-template-columns: repeat(1, 320px);
+                justify-content: center
+            }
+        }
+
+        @media (max-width: 899.98px) {
+            .mentors-grid {
+                grid-template-columns: 1fr;
+                justify-items: center
+            }
+
+            .mentors-grid .person {
+                max-width: 420px;
+                width: 100%
+            }
+        }
+
+        .person {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem;
+            background: #fff;
+            text-align: center;
+            transition: box-shadow .2s ease, transform .2s ease;
+        }
+
+        .person:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+            transform: translateY(-2px);
+        }
+
+        .person img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: #f7f7f7;
+            object-fit: cover;
+        }
+
+        .team-img {
+            height: 239px;
+        }
+
+        .client-mentor-img {
+            height: 460px;
+        }
+
+        .person h4 {
+            margin: .6rem 0 .2rem
+        }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid var(--border);
+            background: #ffffff;
+            padding: 1rem 0
+        }
+    </style>
+
+    <script>
+        // Hamburger toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('navToggle');
+            const nav = document.getElementById('primaryNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                nav.classList.toggle('open', !expanded);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container header-row">
+            <a class="brand" href="index.html">
+                <img src="Images/E66logo.jpg" alt="Experience66 logo" width="40" height="40" />
+                <span>Experience66</span>
+            </a>
+
+            <button id="navToggle" class="hamburger" aria-label="Open menu" aria-controls="primaryNav"
+                aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <nav id="primaryNav" aria-label="Primary">
+                <ul>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="project.html">Project details</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main id="main" tabindex="-1">
+        <div class="container">
+
+            <!-- Hero -->
+            <section class="card hero" aria-labelledby="brief">
+                <img class="hero-logo" src="Images/E66logo.jpg" alt="Experience66 project logo" />
+                <div>
+                    <h1 id="brief">Experience66 — Route 66, in your pocket</h1>
+                    <p class="muted">
+                        <strong>About Route 66:</strong> U.S. Route 66, often called the “Mother Road,” is one of the
+                        most iconic highways in
+                        American history. Established in 1926, it once stretched nearly 2,500 miles from Chicago,
+                        Illinois, to Santa Monica,
+                        California, crossing eight states and linking countless communities. For decades, it served as a
+                        vital migration and
+                        travel route, especially during the Great Depression and Dust Bowl of the 1930s, when families
+                        moved west in search of
+                        opportunity. Beyond transportation, Route 66 became a cultural phenomenon. It was lined with
+                        neon-lit diners, motels,
+                        and roadside attractions that defined the spirit of the American road trip. Immortalized in
+                        music, film, and television,
+                        it came to symbolize freedom, adventure, and the open road. Although decommissioned in 1985,
+                        Route 66 continues to
+                        thrive through preservation and tourism. Arizona is home to some of the best-preserved sections
+                        of the highway, where
+                        visitors can still experience classic small towns, vintage architecture, and the nostalgic charm
+                        of mid-20th century
+                        travel. Today, Route 66 remains a living museum and a treasured piece of American heritage.
+                    </p>
+                    <p>
+                        <strong>Our project:</strong> Experience66 is a capstone project designed to bring the history
+                        and culture of Arizona’s
+                        Route 66 into the hands of travelers and learners everywhere. While the Mother Road is
+                        celebrated worldwide, many of
+                        its stories and landmarks are scattered, making it difficult for visitors to fully engage with
+                        its legacy.
+                        Our project addresses this challenge by developing a mobile-friendly web application that
+                        curates key points of
+                        interest along Route 66 in Arizona. The platform combines photos, historical context, and
+                        wayfinding features to create
+                        a simple, engaging, and educational tool. Travelers can use it while on the road to explore
+                        nearby attractions, while
+                        students, researchers, and history enthusiasts can access the same information from anywhere.
+                        Designed with usability,
+                        accessibility, and long-term preservation in mind, the project is built as a static,
+                        standards-compliant website to
+                        ensure its archival reliability on NAU’s server. By uniting technology and cultural heritage,
+                        Experience66 offers a
+                        modern way to celebrate and preserve Route 66, ensuring that its stories continue to inspire
+                        future generations.
+                    </p>
+                    <div class="actions">
+                        <a class="cta cta--primary" href="project.html">View project details</a>
+                        <a class="cta" href="demo.html">See demo</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team -->
+            <section class="section" aria-labelledby="team">
+                <div class="section-head">
+                    <div>
+                        <h2 id="team">Team</h2>
+                        <p class="muted">Four-person NAU CS Capstone team.</p>
+                    </div>
+                    <p><a class="cta" href="team.html">Meet the full team</a></p>
+                </div>
+
+                <div class="team-grid">
+                    <article class="person">
+                        <img src="Images/manjot.jpeg" alt="Photo of Manjot Kaur" class="team-img" />
+                        <h4>Manjot Kaur</h4>
+                        <p class="muted">Team Lead & Front-End Developer</p>
+                    </article>
+                    <article class="person">
+                        <img src="Images/ethan.jpeg" alt="Photo of Ethan" class="team-img" />
+                        <h4>Ethan</h4>
+                        <p class="muted">Architect & Front-End Developer</p>
+                    </article>
+                    <article class="person">
+                        <img src="Images/moraa.jpeg" alt="Photo of Moraa" class="team-img" />
+                        <h4>Moraa</h4>
+                        <p class="muted">Release Manager & Back-End Developer</p>
+                    </article>
+                    <article class="person">
+                        <img src="Images/nasya.jpeg" alt="Photo of Nasya" class="team-img" />
+                        <h4>Nasya</h4>
+                        <p class="muted">Recorder & Back-End Developer</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Clients & Mentor -->
+            <section class="section" aria-labelledby="support">
+                <div class="section-head">
+                    <div>
+                        <h2 id="support">Clients & Mentor</h2>
+                        <p class="muted">Images and details posted with permission. Stored locally for archival
+                            reliability.</p>
+                    </div>
+                </div>
+
+                <!-- Clients -->
+                <h3>Clients</h3>
+                <div class="clients-grid">
+                    <article class="person">
+                        <img src="Images/Mike.jpg" alt="Photo of Mike Taylor" class="client-mentor-img" />
+                        <h4>Mike Taylor (he/him/his)</h4>
+                        <p class="muted">Manager, Library Digital Services<br>
+                            Cline Library, NAU<br>
+                            Also associated with Technology Strategies and Services<br>
+                            Head, Technology Strategies & Services</p>
+                    </article>
+
+                    <article class="person">
+                        <img src="Images/Mark.jpg" alt="Photo of Mark" class="client-mentor-img" />
+                        <h4>Mark</h4>
+                        <p class="muted">Professor of Practice, Geography, Planning & Recreation<br>
+                            College of Social & Behavioral Sciences, NAU</p>
+                    </article>
+                </div>
+
+                <!-- Mentor -->
+                <h3>Mentor</h3>
+                <div class="mentors-grid">
+                    <article class="person">
+                        <img src="Images/Scott.jpeg" alt="Photo of Scott" class="client-mentor-img" />
+                        <h4>Scott</h4>
+                        <p class="muted">PhD Student, Ecological & Environmental Informatics<br>
+                            Northern Arizona University<br>
+                            Research: computation + forest ecosystem science</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container muted">
+            © <span id="y"></span> Experience66 • Archival, self-contained site. Last updated
+            <time id="lu"></time>.
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const d = new Date();
+            document.getElementById('y').textContent = d.getFullYear();
+            document.getElementById('lu').textContent = d.toLocaleDateString();
+        })();
+    </script>
+</body>
+
+</html>
